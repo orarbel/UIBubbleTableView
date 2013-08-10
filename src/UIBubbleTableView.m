@@ -195,7 +195,7 @@
         static NSString *cellId = @"tblBubbleTypingCell";
         UIBubbleTypingTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
         
-        if (cell == nil) cell = [[UIBubbleTypingTableViewCell alloc] init];
+        if (cell == nil) cell = [[UIBubbleTypingTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
 
         cell.type = self.typingBubble;
         cell.showAvatar = self.showAvatars;
@@ -210,7 +210,7 @@
         UIBubbleHeaderTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
         NSBubbleData *data = [[self.bubbleSection objectAtIndex:indexPath.section] objectAtIndex:0];
         
-        if (cell == nil) cell = [[UIBubbleHeaderTableViewCell alloc] init];
+        if (cell == nil) cell = [[UIBubbleHeaderTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
 
         cell.date = data.date;
        
@@ -222,7 +222,7 @@
     UIBubbleTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
     NSBubbleData *data = [[self.bubbleSection objectAtIndex:indexPath.section] objectAtIndex:indexPath.row - 1];
     
-    if (cell == nil) cell = [[UIBubbleTableViewCell alloc] init];
+    if (cell == nil) cell = [[UIBubbleTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
     
     cell.data = data;
     cell.showAvatar = self.showAvatars;
